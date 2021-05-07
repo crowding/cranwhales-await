@@ -2,9 +2,13 @@
 
 This is a Shiny example application, meant to demonstrate how to convert synchronous (traditional) Shiny apps to asynchronous ones.
 
-This is the **synchronous** version. The (naive) asynchronous version is [here](https://github.com/jcheng5/cranwhales/tree/async) ([diff](https://github.com/jcheng5/cranwhales/compare/sync...async?diff=split)). The optimized asynchronous version is [here](https://github.com/rstudio/cranwhales/tree/async2) ([diff](https://github.com/jcheng5/cranwhales/compare/async...async2?diff=split)).
+This is the (naive) **async/await** version. The synchronous version is [here](https://github.com/rstudio/cranwhales) ([diff](https://github.com/rstudio/cranwhales/compare/rstudio:sync...crowding:await?diff=split)).
+The asynchronous **promise-pipe** version  is [here](https://github.com/rstudio/cranwhales/tree/async) ([diff](https://github.com/rstudio/cranwhales/compare/rstudio:async...crowding:await?diff=split)) 
 
 To learn more about asynchronous programming in R and Shiny, see https://rstudio.github.io/promises/.
+
+The `async` package offers an alternate syntax for promises (async/await) and iterators (generators),  see
+https://github.com/crowding/async
 
 ## Installation
 
@@ -17,7 +21,13 @@ install.packages("shiny")
 You'll also need a number of other packages from CRAN:
 
 ```r
-install.packages(c("readr", "dplyr", "ggplot2", "DT", "glue", "lubridate", "gdata", "shinydashboard", "future"))
+install.packages(c("readr", "dplyr", "ggplot2", "DT", "glue", "lubridate", "gdata", "shinydashboard", "future", "devtools"))
+```
+
+Finally, for async/await you will need the `async` package from Github.
+
+```r
+devtools::install_github("crowding/async")
 ```
 
 Now you're ready to run this app by calling `shiny::runApp()`.
